@@ -1,0 +1,43 @@
+questions:
+- question: "Mely karaktersorozat illeszkedik az <i>a*b</i> reguláris kifejezésre?"
+  feedback: "akárhány <i>a</i> betű után pontosan egy <i>b</i> betűnek kell következnie"
+  good:
+  - answer: ab
+  - answer: b
+    hint: "0 darab <i>a</i> betű is megengedett"
+  - answer: aab
+  - answer: aaab
+  - answer: aaaab
+  - answer: aaaaab
+  - answer: aaaaaab
+  - answer: aaaaaaab
+  bad:
+  - answer: ba
+    hint: "<i>b</i> betűre kell végződnie"
+  - answer: bab
+    hint: "<i>b</i> nem szerepelhet <i>a</i> előtt"
+  - answer: aaaabb
+    hint: "csak 1 darab <i>b</i> betűt tartalmazhat"
+  - answer: a
+    hint: "pontosan egy <i>b</i> betűt kell tartalmaznia"
+
+- question: "Mely karaktersorozat illeszkedik az <i>(ab)*</i> reguláris kifejezésre?"
+  feedback: "akárhány <i>ab</i> párnak kell szerepelnie a szóban"
+  good:
+  - answer: ab
+  - answer: "&epsilon;"
+    hint: "az üres szó is megengedett"
+  - answer: abab
+  - answer: ababab
+  - answer: abababab
+  - answer: ababababab
+  bad:
+  - answer: abb
+    hint: "ugyanannyi <i>a</i> és <i>b</i> betűt kell tartalmaznia a szónak"
+  - answer: baba
+    hint: "<i>a</i> betűvel kell kezdődnie"
+  - answer: aaabbb
+    hint: "<i>ab</i> párokat kell tartalmaznia a szónak"
+  - answer: a
+    hint: "ugyanannyi <i>a</i> és <i>b</i> betűt kell tartalmaznia a szónak"
+

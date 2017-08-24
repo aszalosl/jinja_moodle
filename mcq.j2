@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category><text>{{ data.title -}}</text></category>
+  </question>
+{% for q in data.questions -%}
+  <question type="multichoice">
+    <name><text>{{ q.name -}}</text></name>
+    <questiontext format="html">
+      <text><![CDATA[{{ q.questiontext -}}]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[{{ q.generalfeedback -}}]]> </text>
+    </generalfeedback>
+    <single>false</single>
+    <answernumbering>abc</answernumbering>
+    <defaultgrade>1.000</defaultgrade>
+    <penalty>0.33</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="markdown">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="markdown">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="markdown">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    {% for a in q.answers -%}
+    <answer format="html" fraction="{{ a.value -}}">
+      <text><![CDATA[{{ a.text -}} ]]></text>
+      <feedback format="html">
+        <text><![CDATA[{{ a.feedback -}}]]></text>
+      </feedback>
+    </answer>
+    {% endfor -%}
+  </question>
+{% endfor -%}
+</quiz>
